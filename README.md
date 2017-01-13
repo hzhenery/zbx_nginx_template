@@ -19,31 +19,31 @@ It's accumulate nginx stats and parse the access.log (just pice of log at once) 
 
 ## Install
 
-1) Put `zbx_nginx_stats.py` into your scripts path (like: `/etc/zabbix/script/nginx/`) on your Zabbix agent hosts.
+1) Put `zbx_nginx_stats.py` into your scripts path (like: `/usr/local/zabbix/scripts/nginx/`) on your Zabbix agent hosts.
 
 2) Change next section in zbx_nginx_stats.py, to your configuration:
 
 ```
 zabbix_host = '127.0.0.1'   # Zabbix server IP
 zabbix_port = 10051         # Zabbix server port
-hostname = 'Zabbix Agent'   # Name of monitored host, like it shows in zabbix web ui
+hostname = 'Zabbix server'   # Name of monitored host, like it shows in zabbix web ui
 time_delta = 1              # grep interval in minutes
 
 # URL to nginx stat (http_stub_status_module)
-stat_url = 'https://nginx.server/nginx_stat'
+stat_url = 'http://127.0.0.1/nginx_status'
 
 # Nginx log file path
 nginx_log_file_path = '/var/log/nginx/access.log'
 
 # Optional Basic Auth
-username = 'user'
-password = 'pass'
+username = 'admin'
+password = 'zabbix'
 
 # Temp file, with log file cursor position
 seek_file = '/tmp/nginx_log_stat'
 ```
 
-3) In script path (`/etc/zabbix/script/nginx/`) do:
+3) In script path (`/usr/local/zabbix/scripts/nginx/`) do:
 ```
 chmod +x zbx_nginx_stats.py
 ```
@@ -52,14 +52,14 @@ chmod +x zbx_nginx_stats.py
 ```
 $ sudo crontab -e
 
-*/1 * * * * /etc/zabbix/script/nginx/zbx_nginx_stats.py
+*/1 * * * * /usr/local/zabbix/scripts/nginx/zbx_nginx_stats.py
 ```
 
 5) Import `zbx_nginx_template.xml` into zabbix in Tepmplate section web gui.
 
 6) Add the following configurations to you Nginx configuration file.
 ```
-location /nginx_stat {
+location /nginx_status {
   stub_status on;       # Turn on nginx stats
   access_log   off;     # We do not need logs for stats
   allow 127.0.0.1;      # Security: Only allow access from IP

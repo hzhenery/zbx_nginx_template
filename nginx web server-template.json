@@ -1,0 +1,1300 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_GRAFANA-ZABBIX.ORG",
+      "label": "grafana-zabbix.org",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "alexanderzobnin-zabbix-datasource",
+      "pluginName": "Zabbix"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "4.0.2"
+    },
+    {
+      "type": "datasource",
+      "id": "alexanderzobnin-zabbix-datasource",
+      "name": "Zabbix",
+      "version": "1.0.0"
+    }
+  ],
+  "id": null,
+  "title": "nginx web server",
+  "tags": [
+    "dashboard",
+    "zabbix"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "sharedCrosshair": true,
+  "hideControls": false,
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": "1m",
+  "schemaVersion": 13,
+  "version": 21,
+  "links": [],
+  "gnetId": null,
+  "rows": [
+    {
+      "title": "Row",
+      "panels": [
+        {
+          "content": "### nginx web server\n#### status data",
+          "editable": true,
+          "error": false,
+          "id": 4,
+          "links": [],
+          "mode": "markdown",
+          "span": 3.10437306501548,
+          "style": {},
+          "title": "",
+          "transparent": false,
+          "type": "text"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(78, 37, 20, 0.88)",
+            "rgba(126, 10, 10, 0.85)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAFANA-ZABBIX.ORG}",
+          "decimals": 1,
+          "editable": true,
+          "error": false,
+          "format": "short",
+          "hideTimeOverride": true,
+          "id": 1,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": " requests\\sec",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 3.1077399380804955,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "alias": "Requests\\sec",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "functions": [],
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Requests\\sec",
+                "name": "Requests\\sec"
+              },
+              "mode": 0,
+              "refId": "A",
+              "options": {
+                "showDisabledItems": false
+              }
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "Requests",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1,
+          "gauge": {
+            "show": false,
+            "minValue": 0,
+            "maxValue": 100,
+            "thresholdMarkers": true,
+            "thresholdLabels": false
+          }
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(1, 49, 97, 0.88)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAFANA-ZABBIX.ORG}",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "format": "short",
+          "hideTimeOverride": true,
+          "id": 2,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": "100",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "alias": "Active connections",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "functions": [],
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Active connections",
+                "name": "Active connections"
+              },
+              "mode": 0,
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "Active connections",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1,
+          "gauge": {
+            "show": false,
+            "minValue": 0,
+            "maxValue": 100,
+            "thresholdMarkers": true,
+            "thresholdLabels": false
+          }
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(31, 53, 83, 0.88)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAFANA-ZABBIX.ORG}",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "format": "short",
+          "hideTimeOverride": true,
+          "id": 3,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": "100",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "alias": "Keepalive connections",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "functions": [],
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Keepalive connections",
+                "name": "Keepalive connections"
+              },
+              "mode": 0,
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "Keepalive connections",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1,
+          "gauge": {
+            "show": false,
+            "minValue": 0,
+            "maxValue": 100,
+            "thresholdMarkers": true,
+            "thresholdLabels": false
+          }
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(7, 81, 0, 0.88)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAFANA-ZABBIX.ORG}",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "format": "short",
+          "hideTimeOverride": true,
+          "id": 8,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": "100",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 1.7878869969040245,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "alias": "Response code 200 per minute",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Response code 200 per minute",
+                "name": "Response code 200 per minute"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "timeFrom": "5m",
+          "title": "Response code 200 per minute",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1,
+          "gauge": {
+            "show": false,
+            "minValue": 0,
+            "maxValue": 100,
+            "thresholdMarkers": true,
+            "thresholdLabels": false
+          }
+        }
+      ],
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": 138.625,
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
+    },
+    {
+      "title": "New row",
+      "panels": [
+        {
+          "aliasColors": {
+            "Active connections": "#CCA300",
+            "Requests\\sec": "#E5AC0E",
+            "max": "#99440A"
+          },
+          "bars": false,
+          "datasource": "${DS_GRAFANA-ZABBIX.ORG}",
+          "decimals": 1,
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "id": 9,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "500",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "max",
+              "color": "#99440A",
+              "fillBelowTo": "min",
+              "lines": false
+            },
+            {
+              "alias": "min",
+              "lines": false
+            },
+            {
+              "alias": "Requests\\sec",
+              "color": "#E5AC0E",
+              "zindex": 3
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Requests\\sec",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "functions": [
+                {
+                  "def": {
+                    "category": "Transform",
+                    "defaultParams": [
+                      "1m",
+                      "avg"
+                    ],
+                    "name": "groupBy",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      },
+                      {
+                        "name": "function",
+                        "options": [
+                          "avg",
+                          "min",
+                          "max",
+                          "median"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m",
+                    "avg"
+                  ],
+                  "text": "groupBy(1m, avg)"
+                },
+                {
+                  "def": {
+                    "category": "Trends",
+                    "defaultParams": [
+                      "avg"
+                    ],
+                    "name": "trendValue",
+                    "params": [
+                      {
+                        "name": "type",
+                        "options": [
+                          "avg",
+                          "min",
+                          "max"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "avg"
+                  ],
+                  "text": "trendValue(avg)"
+                }
+              ],
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Requests\\sec",
+                "name": "Requests\\sec"
+              },
+              "mode": 0,
+              "refId": "A",
+              "options": {
+                "showDisabledItems": false
+              }
+            },
+            {
+              "alias": "max",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "max",
+                "value": "max"
+              },
+              "errors": {},
+              "functions": [
+                {
+                  "def": {
+                    "category": "Transform",
+                    "defaultParams": [
+                      "1m",
+                      "avg"
+                    ],
+                    "name": "groupBy",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      },
+                      {
+                        "name": "function",
+                        "options": [
+                          "avg",
+                          "min",
+                          "max",
+                          "median"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m",
+                    "min"
+                  ],
+                  "text": "groupBy(1m, min)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "min"
+                  ],
+                  "text": "setAlias(min)"
+                },
+                {
+                  "def": {
+                    "category": "Trends",
+                    "defaultParams": [
+                      "avg"
+                    ],
+                    "name": "trendValue",
+                    "params": [
+                      {
+                        "name": "type",
+                        "options": [
+                          "avg",
+                          "min",
+                          "max"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "min"
+                  ],
+                  "text": "trendValue(min)"
+                }
+              ],
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "hide": false,
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Requests\\sec",
+                "name": "Requests\\sec"
+              },
+              "mode": 0,
+              "refId": "B",
+              "options": {
+                "showDisabledItems": false
+              }
+            },
+            {
+              "alias": "min",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "min",
+                "value": "min"
+              },
+              "errors": {},
+              "functions": [
+                {
+                  "def": {
+                    "category": "Transform",
+                    "defaultParams": [
+                      "1m",
+                      "avg"
+                    ],
+                    "name": "groupBy",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      },
+                      {
+                        "name": "function",
+                        "options": [
+                          "avg",
+                          "min",
+                          "max",
+                          "median"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m",
+                    "max"
+                  ],
+                  "text": "groupBy(1m, max)"
+                },
+                {
+                  "def": {
+                    "category": "Alias",
+                    "defaultParams": [],
+                    "name": "setAlias",
+                    "params": [
+                      {
+                        "name": "alias",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "max"
+                  ],
+                  "text": "setAlias(max)"
+                },
+                {
+                  "def": {
+                    "category": "Trends",
+                    "defaultParams": [
+                      "avg"
+                    ],
+                    "name": "trendValue",
+                    "params": [
+                      {
+                        "name": "type",
+                        "options": [
+                          "avg",
+                          "min",
+                          "max"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "max"
+                  ],
+                  "text": "trendValue(max)"
+                }
+              ],
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "hide": false,
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Requests\\sec",
+                "name": "Requests\\sec"
+              },
+              "mode": 0,
+              "refId": "C",
+              "options": {
+                "showDisabledItems": false
+              }
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Requests\\sec",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "value_type": "cumulative",
+            "sort": 0
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true,
+            "mode": "time",
+            "name": null,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "thresholds": []
+        },
+        {
+          "aliasColors": {
+            "Active connections": "#1F78C1"
+          },
+          "bars": false,
+          "datasource": "${DS_GRAFANA-ZABBIX.ORG}",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "fill": 2,
+          "grid": {},
+          "id": 6,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "100",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "alias": "Active connections",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Active connections",
+                "name": "Active connections"
+              },
+              "refId": "A",
+              "mode": 0,
+              "functions": [],
+              "options": {
+                "showDisabledItems": false
+              }
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Active connections",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "value_type": "cumulative",
+            "sort": 0
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true,
+            "mode": "time",
+            "name": null,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "thresholds": []
+        }
+      ],
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
+    },
+    {
+      "title": "New row",
+      "panels": [
+        {
+          "aliasColors": {
+            "Handled connections\\min": "#EAB839"
+          },
+          "bars": false,
+          "datasource": "${DS_GRAFANA-ZABBIX.ORG}",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {},
+          "id": 5,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "300",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Handled connections\\min",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "functions": [
+                {
+                  "added": false,
+                  "def": {
+                    "category": "Transform",
+                    "defaultParams": [
+                      "1m",
+                      "avg"
+                    ],
+                    "name": "groupBy",
+                    "params": [
+                      {
+                        "name": "interval",
+                        "type": "string"
+                      },
+                      {
+                        "name": "function",
+                        "options": [
+                          "avg",
+                          "min",
+                          "max",
+                          "median"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "1m",
+                    "avg"
+                  ],
+                  "text": "groupBy(1m, avg)"
+                }
+              ],
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Handled connections\\min",
+                "name": "Handled connections\\min"
+              },
+              "mode": 0,
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Handled connections",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "value_type": "cumulative",
+            "sort": 0
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true,
+            "mode": "time",
+            "name": null,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "thresholds": []
+        },
+        {
+          "aliasColors": {
+            "Handled connections\\min": "#EAB839",
+            "Response code 200 per minute": "#9AC48A"
+          },
+          "bars": false,
+          "datasource": "${DS_GRAFANA-ZABBIX.ORG}",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {},
+          "id": 7,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Response code 200 per minute",
+              "application": {
+                "filter": "Nginx",
+                "name": "Nginx"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "group": {
+                "filter": "Zabbix servers",
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "filter": "Zabbix server",
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "Zabbix server"
+              },
+              "item": {
+                "filter": "Response code 200 per minute",
+                "name": "Response code 200 per minute"
+              },
+              "itemFilter": "Response code (200|304|499|404)",
+              "refId": "A",
+              "mode": 0,
+              "functions": [],
+              "options": {
+                "showDisabledItems": false
+              }
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Response code 200 per minute",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "value_type": "individual",
+            "sort": 0
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true,
+            "mode": "time",
+            "name": null,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "thresholds": []
+        }
+      ],
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
+    }
+  ]
+}
