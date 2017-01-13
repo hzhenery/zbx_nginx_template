@@ -15,8 +15,8 @@ time_delta = 1              # grep interval in minutes
 # URL to nginx stat (http_stub_status_module)
 stat_url = 'http://127.0.0.1/nginx_status'
 
-# Nginx log file path
-nginx_log_file_path = '/var/log/nginx/access.log'
+# Nginx log file path (need the right path!!!)
+nginx_log_file_path = '/home/wwwlogs/access.log'
 
 # Optional Basic Auth
 username = 'admin'
